@@ -1,3 +1,8 @@
+@php
+$isDashboard = request()->routeIs('dashboard');
+$isEc2 = request()->routeIs('ec2.*');
+@endphp
+
 <aside id="sidebar"
     class="w-72 bg-slate-900 text-gray-200 min-h-screen flex flex-col shadow-2xl">
 
@@ -22,7 +27,9 @@
     <nav class="flex-1 mt-6 px-4 space-y-2">
 
         <a href="{{ route('dashboard') }}"
-            class="flex items-center gap-4 px-4 py-3 rounded-xl bg-blue-600 text-white shadow">
+            class="flex items-center gap-4 px-4 py-3 rounded-xl  shadow
+            {{ $isDashboard ? 'bg-blue-600 text-white' : 'text-gray-300 hover:bg-slate-800' }}
+            ">
 
             <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
 
@@ -30,13 +37,13 @@
 
         </a>
 
-        <a href="#"
-            class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-slate-800 transition">
-
-            <i data-lucide="server" class="w-5 h-5"></i>
-
+        <a href="{{ route('ec2.index') }}"
+            class="flex items-center px-4 py-3 rounded-lg  transition
+             {{ $isEc2 ? 'bg-blue-600 text-white' : 'text-gray-300 hover:bg-slate-800' }}
+            ">
+            
+            <i data-lucide="server" class="w-5 h-5 mr-3"></i>
             EC2 Calculator
-
         </a>
 
         <a href="#"

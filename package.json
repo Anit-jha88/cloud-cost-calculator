@@ -21,6 +21,7 @@
     "dependencies": {
         "admin-lte": "^4.1.0",
         "chart.js": "^4.5.1",
-        "lucide": "^1.28.0"
+        "lucide": "^1.28.0",
+        "sweetalert2": "^11.26.25"
     }
 }

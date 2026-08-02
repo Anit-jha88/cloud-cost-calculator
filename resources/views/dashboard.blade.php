@@ -23,12 +23,7 @@
 
         </div>
 
-        <button
-            class="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow">
-
-            + New Estimate
-
-        </button>
+     
 
     </div>
 
